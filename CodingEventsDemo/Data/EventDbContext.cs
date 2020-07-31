@@ -9,6 +9,7 @@ namespace CodingEventsDemo.Data
         public DbSet<EventCategory> Categories { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<EventTag> EventTags { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         public EventDbContext(DbContextOptions<EventDbContext> options)
             : base(options)
