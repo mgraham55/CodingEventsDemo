@@ -3,7 +3,7 @@
 
 <h1>Add New Contact</h1>
 
-<form asp-controller="Contact" asp-action="Add" method="post">
+<form enctype="multipart/form-data" asp-controller="Contact" asp-action="Add" method="post">
     <div class="form-group">
         <label asp-for="FirstName"></label>
         <input asp-for="FirstName" />
@@ -39,3 +39,12 @@
     </div>
     <input type="submit" value="Add Contact" />
 </form>
+
+
+@section scripts{
+    <script type="text/javascript">// Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });</script>
+} 

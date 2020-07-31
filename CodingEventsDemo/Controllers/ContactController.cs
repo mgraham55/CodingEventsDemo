@@ -42,11 +42,12 @@ namespace CodingEventsDemo.Controllers
 
         // POST /Contact/Add
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Add(AddContactViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                string uniqueFileName = _UploadedFile(viewModel);
+                string uniqueFileName = UploadedFile(viewModel);
 
                 Contact newContact = new Contact
                 {
@@ -77,7 +78,7 @@ namespace CodingEventsDemo.Controllers
         }
 
 
-        private string _UploadedFile(AddContactViewModel viewModel)
+        private string UploadedFile(AddContactViewModel viewModel)
         {
             string uniqueFileName = null;
 
