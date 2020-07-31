@@ -11,6 +11,8 @@ namespace CodingEventsDemo.Models
         public string PhoneNumber { get; set; }
         public string City { get; set; }
 
+        public string ProfilePicture { get; set; }
+
         public List<Event> Events { get; set; }
 
         public Contact()
