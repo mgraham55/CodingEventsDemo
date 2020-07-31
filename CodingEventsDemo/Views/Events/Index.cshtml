@@ -29,10 +29,10 @@ else
                 Description
             </th>
             <th>
-                Contact Email
+                Category
             </th>
             <th>
-                Category
+                Event Contact
             </th>
         </tr>
         @foreach (var evt in Model)
@@ -41,8 +41,8 @@ else
                 <td>@evt.Id</td>
                 <td>@evt.Name</td>
                 <td>@evt.Description</td>
-                <td>@evt.ContactEmail</td>
                 <td>@evt.Category.Name</td>
+                <td>@evt.Contact.Name</td>
             </tr>
         }
     </table>

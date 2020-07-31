@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace CodingEventsDemo.Models
 {
     public class Contact
@@ -8,6 +10,8 @@ namespace CodingEventsDemo.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string City { get; set; }
+
+        public List<Event> Events { get; set; }
 
         public Contact()
         {

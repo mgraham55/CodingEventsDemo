@@ -19,7 +19,6 @@ namespace CodingEventsDemo.ViewModels
             EventId = theEvent.Id;
             Name = theEvent.Name;
             Description = theEvent.Description;
-            ContactEmail = theEvent.ContactEmail;
             CategoryName = theEvent.Category.Name;
 
             TagText = "";

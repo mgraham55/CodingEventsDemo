@@ -9,19 +9,18 @@ namespace CodingEventsDemo.Models
 
         public string Description { get; set; }
 
-        public string ContactEmail { get; set; }
-
         public EventCategory Category { get; set; }
-
         public int CategoryId { get; set; }
+
+        public Contact Contact { get; set; }
+        public int ContactId { get; set; }
 
         public int Id { get; set; }
 
-        public Event(string name, string description, string contactEmail)
+        public Event(string name, string description)
         {
             Name = name;
             Description = description;
-            ContactEmail = contactEmail;
         }
 
         public Event()
