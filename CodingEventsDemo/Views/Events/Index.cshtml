@@ -4,9 +4,17 @@
     <a asp-controller="Events" asp-action="Add">Add Event</a>
 </p>
 
-<ul>
-    @foreach (string meeting in ViewBag.events)
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+
+    @foreach(KeyValuePair<string, string> name in ViewBag.events)
     {
-        <li>@meeting</li>
+        <tr>
+            <td>@name.Key</td>
+            <td>@name.Value</td>
+        </tr>
     }
-</ul>
+</table>
