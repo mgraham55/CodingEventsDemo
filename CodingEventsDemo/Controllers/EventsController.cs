@@ -49,6 +49,36 @@ namespace coding_events_practice.Controllers
             return View(addEventViewModel);
         }
 
+        [HttpGet]
+        [Route("/Events/Edit/{eventId}")]
+        public IActionResult Edit(int eventId)
+        {
+            // Create an editEventViewModel with properties assigned from the event associated the event id
+            Event eventToEdit = EventData.GetById(eventId);
+
+            EditEventViewModel editEventViewModel = new EditEventViewModel(eventToEdit);
+
+            return View(editEventViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EditEventViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            { 
+                Event eventToEdit = EventData.GetById(viewModel.Id);
+
+                eventToEdit.Name = viewModel.Name;
+                eventToEdit.Description = viewModel.Description;
+                eventToEdit.ContactEmail = viewModel.ContactEmail;
+
+                return Redirect("/Events");
+            }
+
+            return View(viewModel);
+        }
+
+
         public IActionResult Delete()
         {
             ViewBag.events = EventData.GetAll();
